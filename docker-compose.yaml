@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  backend:
+    container_name: backend
+    #image: app-backend
+    build: backend/.
+    networks:
+      - app-network
+    volumes:
+    - C:\Users\91744\OneDrive\Documents\quantiphi\Docker\docker-training-main\backend:/app
+  frontend:
+    container_name: frontend
+    #image: app-frontend:1
+    build: frontend/.
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    volumes:
+    - C:\Users\91744\OneDrive\Documents\quantiphi\Docker\docker-training-main\frontend:/usr/share/nginx/html
+    depends_on:
+      - backend
+networks:
+  app-network:
+    driver: bridge
