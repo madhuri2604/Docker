@@ -2,16 +2,16 @@ version: "3.3"
 services:
   backend:
     container_name: backend
-    #image: app-backend
-    build: backend/.
+    image: app-backend
+    #build: backend/.
     networks:
       - app-network
     volumes:
     - /var/lib/jenkins/workspace/la/Docker/backend:/app
   frontend:
     container_name: frontend
-    #image: app-frontend:1
-    build: frontend/.
+    image: app-frontend
+    #build: frontend/.
     ports:
       - "80:80"
     networks:
