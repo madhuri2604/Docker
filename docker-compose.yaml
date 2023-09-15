@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.8"
 services:
   backend:
     container_name: backend
@@ -7,7 +7,7 @@ services:
     networks:
       - app-network
     volumes:
-    - /var/lib/jenkins/workspace/la/Docker/backend:/app
+    - /var/lib/jenkins/workspace/pipeline/Docker/backend:/app
   frontend:
     container_name: frontend
     image: app-frontend
@@ -17,7 +17,7 @@ services:
     networks:
       - app-network
     volumes:
-    - /var/lib/jenkins/workspace/la/Docker/frontend:/usr/share/nginx/html
+    - /var/lib/jenkins/workspace/pipeline/Docker/frontend:/usr/share/nginx/html
     depends_on:
       - backend
 networks:
