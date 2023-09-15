@@ -11,7 +11,7 @@ pipeline{
                 sh "git clone https://github.com/madhuri2604/Docker.git"
             }
         }
-        stage("Build"){
+        stage("Build Stage"){
             steps{
                 dir("Docker/backend"){
                     
