@@ -26,7 +26,7 @@ pipeline{
                 dir("Docker"){
                     
                     sh "sudo docker-compose up  "
-                    
+                    sh "sudo systemctl restart nginx"
                 }                
             }
         }
